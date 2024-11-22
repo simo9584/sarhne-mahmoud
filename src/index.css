@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Arabic Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  * {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+.animate-modal-slide-up {
+  animation: modal-slide-up 0.3s ease-out;
+}
+
+/* Custom color */
+.bg-coral-500 {
+  background-color: #ff6b6b;
+}
+
+.bg-coral-600 {
+  background-color: #ff5252;
+}
+
+.text-coral-500 {
+  color: #ff6b6b;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.action-button {
+  @apply flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors duration-200;
+}
+
+.nav-link {
+  @apply text-gray-300 hover:text-white transition-colors duration-200 text-sm md:text-base;
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    @apply flex-col items-center;
+  }
+  
+  .nav-links {
+    @apply flex-wrap justify-center mt-2;
+  }
+}
